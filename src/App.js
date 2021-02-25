@@ -11,18 +11,18 @@ import SignUp from "./components/signup-page/signup-page.component";
 function App() {
   return (
     <div className="App">
-      <div>
-        <Switch>
-          <Route path="/signin" component={SignIn} />
-          <Route path="/signup" component={SignUp} />
-          <Header />
+      <Route path="/signup" component={SignUp} />
+      <Route path="/signin" component={SignIn} />
+      <Header />
 
-          <Route exact path="/" component={Intro} />
-          <Route path="/about" component={About} />
-          <Route path="/services" component={Services} />
-          <Route path="/contact-us" component={Contact} />
-        </Switch>
-      </div>
+      {/* <Switch> */}
+
+      <Route exact path="/" component={Intro} />
+      <Route path="/about" component={About} />
+      <Route path="/services" component={Services} />
+      <Route path="/contact-us" component={Contact} />
+
+      {/* </Switch> */}
     </div>
   );
 }
