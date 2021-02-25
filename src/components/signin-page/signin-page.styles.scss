@@ -1,13 +1,62 @@
 $roboto: "Roboto", sans-serif;
 
 .signin-page {
-  font-family: $roboto;
-}
-.create-account {
-  color: #ff444f;
-  margin-left: 5px;
+  // background: #e5eef6;
 
-  &:hover {
-    text-decoration: underline;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  font-family: $roboto;
+  .signin-left {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // text-align: center;
+
+    // form {
+    //   text-align: center;
+    // }
+    .signin-left-container {
+      // border: 1px solid red;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .logo-text {
+        margin-bottom: 50px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        // color: #3a3838;
+      }
+
+      .Signin {
+        margin-top: 20px;
+      }
+    }
   }
+  .signin-right {
+    width: 60%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .create-account {
+    color: #ff444f;
+    margin-left: 5px;
+    // border: 1px solid green;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.or {
+  padding: 6px 0 6px 0;
 }

@@ -1,21 +1,23 @@
 $roboto: "Roboto", sans-serif;
 
 .custom-button {
-  min-width: 250px;
+  min-width: 320px;
   width: auto;
-  height: 40px;
+  height: 45px;
   display: flex;
   align-items: center;
   letter-spacing: 0.5px;
-  line-height: 50px;
+  // line-height: 50px;
   // padding: 0 35px 0 35px;
   font-size: 15px;
   background-color: #fff;
-  color: #000;
-  font-family: "Open Sans Condensed";
+  background-color: #00387a;
+
+  // color: #000;
+  color: #fff;
+  // font-family: "Open Sans Condensed";
   font-weight: bolder;
   border: none;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   border: 1px solid black;
@@ -23,10 +25,10 @@ $roboto: "Roboto", sans-serif;
   // display: none;
 
   &:hover {
-    background-color: #4285f4;
+    // background-color: #00387a;
     color: #fff;
     border: 1px solid black;
-    border: 1px solid green;
+    // border: 1px solid green;
   }
 }
 
@@ -41,7 +43,7 @@ $roboto: "Roboto", sans-serif;
 }
 
 .toSignin {
-  margin-top: 30px;
+  margin-top: 25px;
   // display: none;
 }
 

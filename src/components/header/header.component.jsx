@@ -41,16 +41,16 @@ const Header = () => {
           <ul>
             <Link to="/">
               <li className="link" onClick={handleLinkClick}>
-                HOME
+                Home
               </li>
             </Link>
             <Link to="/about" onClick={handleLinkClick}>
-              <li className="link">ABOUT</li>
+              <li className="link">About</li>
             </Link>
             <Link to="/services">
               <div className="services">
                 <li className="link" onClick={handleSubLinks}>
-                  SERVICES
+                  services
                 </li>
 
                 <div className={subLink ? "subs" : "subs show-subs"}>
@@ -60,10 +60,10 @@ const Header = () => {
               </div>
             </Link>
             <Link to="/contact-us" onClick={handleLinkClick}>
-              <li className="link">CONTACT US</li>
+              <li className="link">Contact us</li>
             </Link>
             <Link to="/signin" onClick={handleLinkClick}>
-              <li className="link"> BOOK APPOINTMENT</li>
+              <li className="link appointment"> BOOK APPOINTMENT</li>
             </Link>
           </ul>
         </div>

@@ -39,4 +39,20 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
-$roboto: "Roboto", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap");
+
+/* font-family: 'Raleway', sans-serif; */
+
+.logo-text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+.logo-text .logo-small {
+  color: #7cdfe3;
+}
+.logo-text .logo-big {
+  color: #333c76;
+}

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import "./signin-page.styles.scss";
+import signinBG from "../../assets/images/markus-winkler-AB4P_fPXirY-unsplash.jpg";
 
 const SignIn = () => {
   const [userInfo, setUserInfo] = useState({
@@ -25,41 +26,54 @@ const SignIn = () => {
 
   return (
     <div className="signin-page">
-      <h2>Welcome Back!</h2>
-      <form onSubmit={handleSubmit}>
-        <FormInput
-          name="email"
-          type="email"
-          value={email}
-          placeholder="Email"
-          handleChange={handleChange}
-          required
-        />
+      <div className="signin-left">
+        <div className="signin-left-container">
+          <Link to="/">
+            <div className="logo-text">
+              <span className="logo-small">we</span>
+              <span className="logo-big">CARE</span>
+            </div>
+          </Link>
+          <h2>Welcome Back !</h2>
+          <form onSubmit={handleSubmit}>
+            <FormInput
+              name="email"
+              type="email"
+              value={email}
+              placeholder="Email"
+              handleChange={handleChange}
+              required
+            />
 
-        <FormInput
-          name="password"
-          type="password"
-          value={password}
-          placeholder="Password"
-          handleChange={handleChange}
-          required
-        />
+            <FormInput
+              name="password"
+              type="password"
+              value={password}
+              placeholder="Password"
+              handleChange={handleChange}
+              required
+            />
 
-        <div className="buttons">
-          <CustomButton type="submit" toSignin>
-            SIGN IN
-          </CustomButton>
-          <div className="or">Or</div>
-          <CustomButton type="button" isGoogleSignIn>
-            Continue with Google
-          </CustomButton>
+            <div className="buttons">
+              <CustomButton type="submit" toSignin>
+                SIGN IN
+              </CustomButton>
+              <div className="or">Or</div>
+              <CustomButton type="button" isGoogleSignIn>
+                Continue with Google
+              </CustomButton>
+            </div>
+          </form>
+          <div className="Signin">
+            Don't have an account yet?
+            <Link to="/signup">
+              <span className="create-account">Create a new account</span>
+            </Link>
+          </div>
         </div>
-      </form>
-      <div className="Signin">
-        Don't have an account yet?
-        <Link to="/signup">
-          <span className="create-account">Create a new account</span>
-        </Link>
+      </div>
+      <div className="signin-right">
+        <img src={signinBG} alt="background" />
       </div>
     </div>
   );
