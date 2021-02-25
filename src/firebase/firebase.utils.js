@@ -1,6 +1,6 @@
-import firebase from 'firebase/app'
-import 'firebase/firestore'
-import 'firebase/auth'
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
 
 const config = {
   apiKey: "AIzaSyD_FZh5pvryb0oL91Wsp1iBR3Y_bttpoYo",
@@ -9,10 +9,17 @@ const config = {
   storageBucket: "wecare-hospital-db.appspot.com",
   messagingSenderId: "895763531458",
   appId: "1:895763531458:web:94120f0f5614e17686dd5b",
-  measurementId: "G-RETPGLE8K8"
+  measurementId: "G-RETPGLE8K8",
 };
 
-firebase.initializeApp(config)
+firebase.initializeApp(config);
 
-export const auth = firebase.auth()
-export const firestore = firebase.firestore()
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: "select_account" });
+
+export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
+
+export default firebase;

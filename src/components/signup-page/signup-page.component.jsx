@@ -4,6 +4,7 @@ import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import "./signup-page.styles.scss";
 import signupBG from "../../assets/images/national-cancer-institute-U7hHC8uCXkY-unsplash2.jpg";
+import { signInWithGoogle } from "../../firebase/firebase.utils";
 
 const SignUp = () => {
   const [userCredentials, setUserCredentials] = useState({
@@ -78,7 +79,11 @@ const SignUp = () => {
                 SIGN UP
               </CustomButton>
               <div className="or">Or</div>
-              <CustomButton type="button" isGoogleSignIn>
+              <CustomButton
+                type="button"
+                onClick={signInWithGoogle}
+                isGoogleSignIn
+              >
                 Continue with Google
               </CustomButton>
             </div>

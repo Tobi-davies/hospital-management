@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/header/header.component";
 import Intro from "./components/intro/intro.component";
