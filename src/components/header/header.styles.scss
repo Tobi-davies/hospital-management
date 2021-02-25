@@ -61,8 +61,10 @@
     }
   }
 }
-li:active {
-  // color: red;
+li:active,
+li:hover,
+li:visited {
+  color: red;
 }
 // .subs {
 //   display: none;
