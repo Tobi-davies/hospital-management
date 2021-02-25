@@ -1,0 +1,62 @@
+$roboto: "Roboto", sans-serif;
+
+.custom-button {
+  min-width: 250px;
+  width: auto;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  // padding: 0 35px 0 35px;
+  font-size: 15px;
+  background-color: #fff;
+  color: #000;
+  font-family: "Open Sans Condensed";
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  font-family: $roboto;
+  // display: none;
+
+  &:hover {
+    background-color: #4285f4;
+    color: #fff;
+    border: 1px solid black;
+    border: 1px solid green;
+  }
+}
+
+.google-sign-in {
+  background: #fff;
+  // background-color: red;
+  color: #000;
+  &:hover {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}
+
+.toSignin {
+  margin-top: 30px;
+  // display: none;
+}
+
+// .google-sign-in:hover {
+//   background-color: #357ae8;
+//   border: none;
+// }
+
+// .custom-button.inverted {
+//   background: #fff;
+//   color: black;
+//   border: 1px solid black;
+// }
+// .inverted:hover {
+//   background: black;
+//   color: white;
+//   border: none;
+// }
