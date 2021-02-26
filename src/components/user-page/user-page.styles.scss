@@ -1,0 +1,23 @@
+.user-page {
+  display: flex;
+  height: 100vh;
+
+  .dashboard-left {
+    width: 20%;
+  }
+  .dashboard-rightcolumn {
+    width: 80%;
+  }
+}
+
+@media (max-width: 852px) {
+  .dashboard-rightcolumn {
+    width: 100%;
+  }
+  .dashboard-left {
+    position: absolute;
+    z-index: 3;
+    // width: 200px;
+    // transform: translateX(-100px);
+  }
+}

@@ -59,4 +59,22 @@ $roboto: "Roboto", sans-serif;
 
 .or {
   padding: 6px 0 6px 0;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .signin-page {
+    background: #e5eef6;
+
+    .signin-left {
+      width: 100%;
+
+      .logo-text {
+        font-size: 1.9rem;
+      }
+    }
+    .signin-right {
+      display: none;
+    }
+  }
 }

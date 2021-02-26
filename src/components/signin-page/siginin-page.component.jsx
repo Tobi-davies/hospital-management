@@ -3,9 +3,14 @@ import { Link } from "react-router-dom";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import "./signin-page.styles.scss";
+import {
+  emailSignInStart,
+  googleSignInStart,
+} from "../../redux/user/user.action";
 import signinBG from "../../assets/images/markus-winkler-AB4P_fPXirY-unsplash.jpg";
+import { connect } from "react-redux";
 
-const SignIn = () => {
+const SignIn = ({ googleSignInStart, emailSignInStart }) => {
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
@@ -16,7 +21,7 @@ const SignIn = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // emailSignInStart(email, password);
+    emailSignInStart(email, password);
   };
 
   const handleChange = (e) => {
@@ -59,7 +64,11 @@ const SignIn = () => {
                 SIGN IN
               </CustomButton>
               <div className="or">Or</div>
-              <CustomButton type="button" isGoogleSignIn>
+              <CustomButton
+                type="button"
+                onClick={googleSignInStart}
+                isGoogleSignIn
+              >
                 Continue with Google
               </CustomButton>
             </div>
@@ -79,4 +88,10 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+const mapDispatchToProps = (dispatch) => ({
+  emailSignInStart: (email, password) =>
+    dispatch(emailSignInStart({ email, password })),
+  googleSignInStart: () => dispatch(googleSignInStart()),
+});
+
+export default connect(null, mapDispatchToProps)(SignIn);

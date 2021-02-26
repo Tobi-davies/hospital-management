@@ -1,25 +1,51 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import "./signup-page.styles.scss";
 import signupBG from "../../assets/images/national-cancer-institute-U7hHC8uCXkY-unsplash2.jpg";
-import { signInWithGoogle } from "../../firebase/firebase.utils";
+// import { signInWithGoogle } from "../../firebase/firebase.utils";
+import { googleSignInStart, signUpStart } from "../../redux/user/user.action";
 
-const SignUp = () => {
+const SignUp = ({ googleSignInStart, signUpStart }) => {
   const [userCredentials, setUserCredentials] = useState({
-    name: "",
+    displayName: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
 
-  const { name, email, password, confirmPassword } = userCredentials;
+  const { displayName, email, password, confirmPassword } = userCredentials;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // emailSignInStart(email, password);
+    if (password !== confirmPassword) {
+      alert("passwords do not match");
+      setUserCredentials({
+        password: "",
+        confirmPassword: "",
+      });
+      return;
+    }
+
+    if (password.length < 6) {
+      alert("passwords is too weak, try another password");
+      this.setState({
+        password: "",
+        confirmPassword: "",
+      });
+      return;
+    }
+    signUpStart({ email, password, displayName });
+
+    setUserCredentials({
+      displayName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
   };
 
   const handleChange = (e) => {
@@ -40,9 +66,9 @@ const SignUp = () => {
           <h2>Create an Account</h2>
           <form onSubmit={handleSubmit}>
             <FormInput
-              name="name"
+              name="displayName"
               type="text"
-              value={name}
+              value={displayName}
               placeholder="Name"
               handleChange={handleChange}
               required
@@ -66,7 +92,7 @@ const SignUp = () => {
             />
 
             <FormInput
-              name="confirm Password"
+              name="confirmPassword"
               type="password"
               value={confirmPassword}
               placeholder="Confirm Password"
@@ -81,7 +107,7 @@ const SignUp = () => {
               <div className="or">Or</div>
               <CustomButton
                 type="button"
-                onClick={signInWithGoogle}
+                onClick={googleSignInStart}
                 isGoogleSignIn
               >
                 Continue with Google
@@ -104,4 +130,9 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+const mapDispatchToProps = (dispatch) => ({
+  googleSignInStart: () => dispatch(googleSignInStart()),
+  signUpStart: (userCredentials) => dispatch(signUpStart(userCredentials)),
+});
+
+export default connect(null, mapDispatchToProps)(SignUp);
