@@ -41,7 +41,7 @@ const DashboardHeader = ({
           {!showMenu ? (
             <i className="fas fa-bars"></i>
           ) : (
-            <i class="fas fa-times"></i>
+            <i className="fas fa-times"></i>
           )}
         </p>
       </div>
