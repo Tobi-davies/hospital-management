@@ -70,7 +70,17 @@ const App = ({ currentUser, location }) => {
           </div>
         )} */}
       </Switch>
-      <Footer />
+      {location.pathname === "/signin" ||
+      location.pathname === "/signup" ||
+      location.pathname === "/dashboard" ||
+      location.pathname === "/dashboard/appointment" ||
+      location.pathname === "/dashboard/profile" ||
+      location.pathname === "/dashboard/billing" ||
+      location.pathname === "/dashboard/notification" ? (
+        ""
+      ) : (
+        <Footer />
+      )}
     </div>
   );
 };
