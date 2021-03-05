@@ -1,0 +1,88 @@
+.contact {
+  background: #e5eef6;
+  overflow: hidden;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+.contact-top {
+  height: 400px;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // border: 1px solid red;
+}
+
+.contact-top-image {
+  background-image: url("../../assets/images/doctor-standing.jpg");
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+}
+
+.contact-top-image::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+}
+.contact-top-text {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+.contact-form {
+  background: #00387a;
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+
+  h2 {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    .level1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 25px;
+
+      input {
+        border: none;
+        height: 40px;
+        width: 260px;
+        outline: none;
+        margin-bottom: 25px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        font-family: "Libre Franklin", sans-serif;
+      }
+    }
+    textarea {
+      height: 150px;
+      border-radius: 4px;
+      font-family: "Libre Franklin", sans-serif;
+      padding: 10px;
+      font-size: 16px;
+    }
+  }
+}

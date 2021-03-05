@@ -13,6 +13,8 @@ import SignUp from "./components/signup-page/signup-page.component";
 import { currentUser } from "./redux/user/user.selectors";
 // import { checkUserSession } from "./redux/user/user.action";
 import UserPage from "./components/user-page/user-page.component";
+import ScrollToTop from "./components/scrollToTop";
+import Footer from "./components/footer/footer.component";
 // import { useEffect } from "react";
 
 const App = ({ currentUser, location }) => {
@@ -23,6 +25,8 @@ const App = ({ currentUser, location }) => {
 
   return (
     <div className="App">
+      <ScrollToTop />
+
       {location.pathname === "/signin" ||
       location.pathname === "/signup" ||
       location.pathname === "/dashboard" ||
@@ -66,6 +70,7 @@ const App = ({ currentUser, location }) => {
           </div>
         )} */}
       </Switch>
+      <Footer />
     </div>
   );
 };

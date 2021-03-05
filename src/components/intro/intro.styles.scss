@@ -1,0 +1,96 @@
+.intro {
+  /* margin-top: 5vh; */
+  // border: 1px solid green;
+  background: #e5eef6;
+  font-family: "Libre Franklin", sans-serif;
+
+  .intro-top {
+    display: flex;
+    width: 95%;
+    margin-left: auto;
+    padding: 30px 0;
+
+    // height: 60vh;
+    .intro-top-first {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Libre Franklin", sans-serif;
+      h1 {
+        font-size: 2.5rem;
+        width: 85%;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+      button {
+        // height: 35px;
+        padding: 10px;
+        display: flex;
+        font-family: "Libre Franklin", sans-serif;
+        color: #fff;
+        background: #00387a;
+        border: none;
+        // align-self: center;
+        // justify-content: center;
+      }
+    }
+
+    .intro-top-second {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .services {
+    // background: #00387a;
+    // background: #fff;
+    // background: #cce3f7;
+    padding: 40px;
+    width: 100%;
+    h2,
+    p {
+      text-align: center;
+    }
+    .reasons {
+      width: 60%;
+      margin: 30px auto;
+      display: flex;
+      justify-content: space-between;
+
+      div {
+        height: 200px;
+        width: 200px;
+        background: #e5eef6;
+        padding: 20px;
+      }
+    }
+  }
+  .download-app {
+    background: #00387a;
+    // background: #7cdfe3;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+
+    p {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    span {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .badge {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 30px;
+    }
+  }
+}

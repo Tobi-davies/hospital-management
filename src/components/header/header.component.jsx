@@ -6,6 +6,7 @@ import "./header.styles.scss";
 const Header = () => {
   const [nav, showNav] = useState(false);
   const [subLink, showSubLink] = useState(false);
+  const [navbar, setNav] = useState(false);
 
   const handleNav = () => {
     showNav((prev) => !prev);
@@ -20,8 +21,19 @@ const Header = () => {
     showSubLink((prev) => !prev);
   };
 
+  const changeBg = () => {
+    // console.log(window.scrollY);
+    if (window.scrollY >= 60) {
+      setNav(true);
+    } else {
+      setNav(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeBg);
+
   return (
-    <div className="header">
+    <div className={navbar ? "header white" : "header"}>
       <div className="header-container">
         <div className="logo">
           <div className="logo-text">
@@ -50,7 +62,7 @@ const Header = () => {
             <Link to="/services">
               <div className="services">
                 <li className="link" onClick={handleSubLinks}>
-                  services
+                  Health Blog
                 </li>
 
                 <div className={subLink ? "subs" : "subs show-subs"}>
